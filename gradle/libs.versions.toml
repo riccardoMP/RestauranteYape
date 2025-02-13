@@ -43,6 +43,7 @@ room-testing = "2.6.1"
 constraintlayout-compose = "1.1.0"
 
 ktlint = "0.48.2"
+maps= "4.3.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -69,8 +70,7 @@ kotlinSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serializatio
 
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 
-androidx-paging-runtime =  { module = "androidx.paging:paging-runtime", version.ref = "paging_version"}
-androidx-paging-compose = {module = "androidx.paging:paging-compose",version.ref = "paging-compose"}
+androidx-maps = { module = "com.google.maps.android:maps-compose", version.ref = "maps" }
 
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx_room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx_room" }

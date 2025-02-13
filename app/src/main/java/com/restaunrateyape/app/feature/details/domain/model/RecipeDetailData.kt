@@ -9,5 +9,8 @@ sealed class RecipeDetailData {
     data class RowInformation(@StringRes val title: Int, val value: String) : RecipeDetailData()
     data class Description(val value: String) : RecipeDetailData()
     data class Bullet(val bullets: List<String>) : RecipeDetailData()
+    data class ButtonData(@StringRes val value: Int, val latitude: Double, val longitude: Double) :
+        RecipeDetailData()
+
     data object Divider : RecipeDetailData()
 }

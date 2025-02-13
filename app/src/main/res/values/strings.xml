@@ -8,10 +8,10 @@
     <string name="details_species">Species</string>
     <string name="details_ingredients">Ingredientes</string>
     <string name="details_location">Ubicación</string>
+    <string name="details_see_location">Ver Ubicación</string>
     <string name="details_origin">Origin</string>
     <string name="details_description">Descripción</string>
 
     <string name="details_information">Ubicación</string>
-
     <string name="custom_search_bar_placeholder">Buscar Receta</string>">
 </resources>

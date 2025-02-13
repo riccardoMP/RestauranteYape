@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.restaunrateyape.app.feature.details.ui.RecipeDetailsScreen
 import com.restaunrateyape.app.feature.details.viewmodel.RecipeDetailsViewModel
+import com.restaunrateyape.app.feature.map.MapScreen
 import com.restaunrateyape.app.feature.recipe.viewmodel.RecipeListViewModel
 import com.restaunrateyape.app.feature.recipe.ui.RecipeListScreen
 import com.restaunrateyape.app.feature.recipe.ui.RecipeSearchScreen
@@ -57,6 +58,19 @@ fun RecipeYapeNavHost() {
                 searchQuery = viewModel.searchQuery.collectAsState().value,
                 onValueChange = viewModel::updateSearchQuery,
                 navigateUp = navController::navigateUp,
+            )
+        }
+
+        composable(Screen.MapsScreen.route) { backStackEntry ->
+            val latitude =
+                backStackEntry.arguments?.getString(Screen.LATITUDE)?.toDoubleOrNull() ?: 0.0
+            val longitude =
+                backStackEntry.arguments?.getString(Screen.LONGITUDE)?.toDoubleOrNull() ?: 0.0
+
+            MapScreen(
+                navHostController = navController,
+                latitude = latitude,
+                longitude = longitude
             )
         }
     }
