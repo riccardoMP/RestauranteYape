@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "RestauranteYapeApp"
 include(":app")
- 
+include(":styles")
+include(":core")
