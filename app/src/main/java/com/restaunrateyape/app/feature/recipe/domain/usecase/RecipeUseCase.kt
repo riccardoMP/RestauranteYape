@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface RecipeUseCase {
     suspend fun loadData(): Flow<RecipeStateDomain>
+    suspend fun searchByNameOrIngredients(query: String): Flow<RecipeStateDomain>
 }

@@ -1,4 +1,4 @@
-package com.restaunrateyape.app.feature.details.viewmodel.state
+package com.restaunrateyape.app.feature.recipe.viewmodel.state
 
 import com.restaunrateyape.app.feature.recipe.domain.model.RecipeData
 

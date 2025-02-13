@@ -6,4 +6,5 @@ interface RecipeRepository {
 
     suspend fun getAllRecipes(): List<RecipeEntity>
     suspend fun getRecipeById(id: Int): RecipeEntity?
+    suspend fun searchByNameOrIngredients(query: String): List<RecipeEntity>
 }

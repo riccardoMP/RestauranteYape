@@ -1,5 +1,5 @@
 <resources>
-    <string name="general_loading">Loading</string>
-    <string name="content_description_clear_search">Clear search</string>">
+    <string name="general_loading">Cargando...</string>
+    <string name="content_description_clear_search">Limpiar busqueda</string>">
 
 </resources>

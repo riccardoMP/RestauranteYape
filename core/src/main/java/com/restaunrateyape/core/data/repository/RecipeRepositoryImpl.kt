@@ -25,4 +25,14 @@ internal class RecipeRepositoryImpl @Inject constructor(
 
         return entity
     }
+
+    override suspend fun searchByNameOrIngredients(query: String): List<RecipeEntity> {
+        return try {
+            val list: List<RecipeEntity> =
+                database.recipeDao.searchRecipesByNameOrIngredients(query = query)
+            list
+        } catch (exception: Exception) {
+            emptyList()
+        }
+    }
 }

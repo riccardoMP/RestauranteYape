@@ -4,14 +4,14 @@
     <string name="recipe_title">Recetas</string>
     <string name="details_title">Detalle</string>
 
-    <string name="details_name">Name</string>
+    <string name="details_name">Nombre</string>
     <string name="details_species">Species</string>
-    <string name="details_gender">Gender</string>
-    <string name="details_location">Location</string>
+    <string name="details_ingredients">Ingredientes</string>
+    <string name="details_location">Ubicación</string>
     <string name="details_origin">Origin</string>
-    <string name="details_status">Status</string>
+    <string name="details_description">Descripción</string>
 
-    <string name="details_information">Información</string>
+    <string name="details_information">Ubicación</string>
 
     <string name="custom_search_bar_placeholder">Buscar Receta</string>">
 </resources>

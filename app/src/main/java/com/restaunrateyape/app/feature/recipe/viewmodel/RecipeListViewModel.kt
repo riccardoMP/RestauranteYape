@@ -1,4 +1,4 @@
-package com.restaunrateyape.app.feature.details.viewmodel
+package com.restaunrateyape.app.feature.recipe.viewmodel
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.lifecycle.ViewModel
@@ -7,10 +7,10 @@ import com.restaunrateyape.app.feature.recipe.domain.usecase.RecipeUseCase
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain.DataError
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain.DataReady
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain.Loading
-import com.restaunrateyape.app.feature.details.viewmodel.state.RecipeUIState
-import com.restaunrateyape.app.feature.details.viewmodel.state.RecipeUIState.OnDataError
-import com.restaunrateyape.app.feature.details.viewmodel.state.RecipeUIState.OnDataReady
-import com.restaunrateyape.app.feature.details.viewmodel.state.RecipeUIState.OnLoading
+import com.restaunrateyape.app.feature.recipe.viewmodel.state.RecipeUIState
+import com.restaunrateyape.app.feature.recipe.viewmodel.state.RecipeUIState.OnDataError
+import com.restaunrateyape.app.feature.recipe.viewmodel.state.RecipeUIState.OnDataReady
+import com.restaunrateyape.app.feature.recipe.viewmodel.state.RecipeUIState.OnLoading
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

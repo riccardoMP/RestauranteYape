@@ -11,4 +11,7 @@ class RecipeHelperImpl @Inject constructor() : RecipeHelper {
             .sortedWith(compareBy { it.name })
             .map { it.toRecipeData() }
     }
+
+    override suspend fun mapToRecipeDataList(list: List<RecipeEntity>): List<RecipeData> =
+        list.map { it.toRecipeData() }
 }

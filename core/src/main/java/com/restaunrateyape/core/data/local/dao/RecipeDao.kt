@@ -22,6 +22,16 @@ interface RecipeDao {
     @Query("DELETE FROM ${RecipeEntity.TABLE_NAME}")
     suspend fun clearAll()
 
+    @Query(
+        """
+        SELECT * FROM ${RecipeEntity.TABLE_NAME} 
+        WHERE LOWER(name) LIKE '%' || LOWER(:query) || '%' 
+        OR LOWER(ingredients) LIKE '%' || LOWER(:query) || '%' 
+        ORDER BY name ASC
+    """
+    )
+    fun searchRecipesByNameOrIngredients(query: String): List<RecipeEntity>
+
     @Transaction
     suspend fun clearAndInsertRecipes(items: List<RecipeEntity>) {
         clearAll()

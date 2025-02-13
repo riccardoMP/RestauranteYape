@@ -6,4 +6,6 @@ import com.restaunrateyape.core.data.local.model.RecipeEntity
 
 interface RecipeHelper {
     suspend fun loadData(list: List<RecipeEntity>): List<RecipeData>
+
+    suspend fun mapToRecipeDataList(list: List<RecipeEntity>): List<RecipeData>
 }

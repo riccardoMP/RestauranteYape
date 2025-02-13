@@ -1,6 +1,7 @@
 package com.restaunrateyape.app.feature.recipe.domain.usecase
 
 import com.restaunrateyape.app.feature.recipe.domain.helper.RecipeHelper
+import com.restaunrateyape.app.feature.recipe.domain.model.RecipeData
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain.DataError
 import com.restaunrateyape.app.feature.recipe.domain.usecase.state.RecipeStateDomain.DataReady
@@ -24,10 +25,23 @@ internal class RecipeUseCaseImpl @Inject constructor(
         val entityList: List<RecipeEntity> = repository.getAllRecipes()
 
         if (entityList.isNotEmpty()) {
-            val recipeDataList = helper.loadData(entityList)
+            val recipeDataList: List<RecipeData> = helper.loadData(entityList)
             emit(DataReady(list = recipeDataList))
         } else {
             emit(DataError("Error al cargar las recetas"))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    override suspend fun searchByNameOrIngredients(query: String): Flow<RecipeStateDomain> = flow {
+        emit(Loading)
+
+        val entityList: List<RecipeEntity> = repository.searchByNameOrIngredients(query = query)
+
+        if (entityList.isNotEmpty()) {
+            val recipeDataList: List<RecipeData> = helper.mapToRecipeDataList(entityList)
+            emit(DataReady(list = recipeDataList))
+        } else {
+            emit(DataError("Error al cargar la búsqueda"))
         }
     }.flowOn(Dispatchers.IO)
 }
